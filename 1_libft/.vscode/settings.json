@@ -1,0 +1,21 @@
+{
+	"editor.insertSpaces": false,
+	"editor.tabSize": 4,
+	"editor.detectIndentation": false, // Desactiva la detección automática de sangría (para usar siempre tu configuración)
+	"editor.formatOnSave": true,
+	"files.trimTrailingWhitespace": true,
+	"files.insertFinalNewline": true,
+	"editor.formatOnSave": true,
+	"codam-norminette-3.command": "norminette", // command that the highlighter executes to get the norm errors
+	"codam-norminette-3.commandTimeoutMs": 10000, // Kill norminette process after this time (in ms) default 10000
+	"codam-norminette-3.fileregex": "\\.[ch]$", // regex that matches the files you want to norm check
+	"codam-norminette-3.ignoreErrors": [ // do not highlight these norm errors
+		// "WRONG_SCOPE_COMMENT",
+		// "LINE_TOO_LONG"
+	],
+	"codam-norminette-3.highlight-color": "rgba(255, 0, 0, 0.2)", // highlight norm errors in custom color. Can be in rgba, hex, or vscode.ThemeColor format.
+	"codam-norminette-3.displayErrorName": false, // display name of error on hover
+	"terminal.integrated.env.linux": {
+		"PATH": "/usr/bin:/usr/local/bin:${env:PATH}"
+	}
+}
