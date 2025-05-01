@@ -3,21 +3,30 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pabtorre <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: pabtorre <pabtorre@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/23 17:21:01 by pabtorre          #+#    #+#              #
-#    Updated: 2025/04/23 17:21:04 by pabtorre         ###   ########.fr        #
+#    Updated: 2025/05/01 20:00:21 by pabtorre         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME = libft.a
 
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
 
-SRCS	= 
+SRC = $(wildcard *.c)
+OBJ = $(SRC:.c=.o)
 
-NAME
+all: $(NAME)
 
-CC = gcc 
+$(NAME): $(OBJ)
+	ar rcs $(NAME) $(OBJ)
 
-RM = rm -f
+clean:
+	RM $(OBJ)
 
-CFLAGS = -Wall -Wextra -Werror -I
+fclean: clean
+	RM $(NAME)
+
+re: fclean all
