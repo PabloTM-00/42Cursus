@@ -6,13 +6,13 @@
 /*   By: pabtorre <pabtorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 18:14:09 by pabtorre          #+#    #+#             */
-/*   Updated: 2025/04/27 18:18:16 by pabtorre         ###   ########.fr       */
+/*   Updated: 2025/05/19 13:27:57 by pabtorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isascii(int c)
+int	ft_isascii(int c)
 {
 	return (c >= 0 && c <= 127);
 }

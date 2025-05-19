@@ -6,13 +6,13 @@
 /*   By: pabtorre <pabtorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 17:15:32 by pabtorre          #+#    #+#             */
-/*   Updated: 2025/04/27 17:39:48 by pabtorre         ###   ########.fr       */
+/*   Updated: 2025/05/19 13:23:04 by pabtorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-    return (c >= '0' && c <= '9');
+	return (c >= '0' && c <= '9');
 }

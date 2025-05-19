@@ -6,13 +6,13 @@
 /*   By: pabtorre <pabtorre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 18:20:42 by pabtorre          #+#    #+#             */
-/*   Updated: 2025/04/27 18:51:44 by pabtorre         ###   ########.fr       */
+/*   Updated: 2025/05/19 13:36:18 by pabtorre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
 	return (c >= 32 && c <= 126);
 }

@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pabtorre <pabtorre@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/19 13:19:51 by pabtorre          #+#    #+#             */
+/*   Updated: 2025/05/19 13:25:17 by pabtorre         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
@@ -42,7 +53,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	new_char[i] = '\0';
 	return (new_char);
 }
-
+/*
 int	main(void) {
 	char const *string = "ababaaaMy name is Simonabbababaa";
 	char const *set = "ab";
@@ -57,3 +68,4 @@ int	main(void) {
 
 	return (0);
 }
+*/
