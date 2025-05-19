@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kanye <kanye@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/10 15:37:07 by kanye             #+#    #+#             */
-/*   Updated: 2024/09/27 18:20:36 by kanye            ###   ########.fr       */
+/*   Created: 2024/09/10 15:36:39 by kanye             #+#    #+#             */
+/*   Updated: 2024/09/29 15:27:38 by kanye            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t		i;
+	size_t			i;
+	unsigned char	*sp;
 
 	i = 0;
-	while (i < n && s1[i] != '\0' && s2[i] != '\0')
+	sp = (unsigned char *)s;
+	while (i < n)
 	{
-		if (s1[i] != s2[i])
-		{
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-		}
+		if (sp[i] == (unsigned char)c)
+			return ((void *)&sp[i]);
 		i++;
 	}
-	if (i < n)
-	{
-		return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-	}
+	return (NULL);
+}
+
+/*
+	int main() {
+	const char *s = "Hello, world!";
+	char c = 's';
+	size_t n = 13;
+	char *result = ft_memchr(s, c, n);
+	printf("Subchain: %s\n", result);
 	return (0);
 }
+*/

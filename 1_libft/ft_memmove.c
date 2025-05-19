@@ -1,45 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kanye <kanye@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/10 15:36:44 by kanye             #+#    #+#             */
-/*   Updated: 2024/09/28 16:07:53 by kanye            ###   ########.fr       */
+/*   Created: 2024/09/10 15:36:48 by kanye             #+#    #+#             */
+/*   Updated: 2024/09/29 15:28:15 by kanye            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t			i;
-	unsigned char	*destp;
-	unsigned char	*srcp;
+	size_t	i;
 
-	i = 0;
-	if (!src && !dest)
+	if (src == NULL && dest == NULL)
 		return (NULL);
-	destp = (unsigned char *)dest;
-	srcp = (unsigned char *)src;
-	while (i < n)
+	if (dest > src)
 	{
-		destp[i] = srcp[i];
-		i++;
+		i = n;
+		while (i > 0)
+		{
+			i--;
+			*(unsigned char *)(dest + i) = *(unsigned char *)(src + i);
+		}
+	}
+	else
+	{
+		i = 0;
+		while (i < n)
+		{
+			*(unsigned char *)(dest + i) = *(unsigned char *)(src + i);
+			i++;
+		}
 	}
 	return (dest);
 }
 /*
 int	main(void) {
+	char buffer[13] = "Hello, World!";
 
-	char source[] = "Hello, World!";
+	printf("Before the memmove: %s\n", buffer);
 
-	char destination[20];
+	ft_memmove(buffer + 4 , buffer, 2);
 
-	ft_memcpy(destination, source, 10);
-	printf("Source: %s\n", source);
-	printf("Destination: %s\n", destination);
+	printf("After the memmove: %s\n", buffer);
 
 	return (0);
 }

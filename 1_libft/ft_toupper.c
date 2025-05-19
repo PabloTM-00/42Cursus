@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pabtorre <pabtorre@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kanye <kanye@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/22 18:38:40 by pabtorre          #+#    #+#             */
-/*   Updated: 2025/04/27 17:39:42 by pabtorre         ###   ########.fr       */
+/*   Created: 2024/09/10 15:37:18 by kanye             #+#    #+#             */
+/*   Updated: 2024/09/27 18:18:48 by kanye            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_tolower(int c)
+int	ft_toupper(int argument)
 {
-    if (c >= 'A' && c <= 'Z')
-    {
-        c -= 32;
-    }
-    return (c);
+	if (argument >= 'a' && argument <= 'z')
+	{
+		argument = argument - 32;
+	}
+	return (argument);
 }

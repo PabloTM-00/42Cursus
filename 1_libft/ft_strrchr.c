@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kanye <kanye@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/10 15:37:07 by kanye             #+#    #+#             */
-/*   Updated: 2024/09/27 18:20:36 by kanye            ###   ########.fr       */
+/*   Created: 2024/09/10 15:37:12 by kanye             #+#    #+#             */
+/*   Updated: 2024/09/29 15:36:22 by kanye            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_strrchr(const char *s, int c)
 {
-	size_t		i;
+	char	*sp;
+	int		s_len;
 
-	i = 0;
-	while (i < n && s1[i] != '\0' && s2[i] != '\0')
+	sp = (char *)s;
+	s_len = ft_strlen(s);
+	if ((unsigned char)c == '\0')
+		return (sp + s_len);
+	while (s_len >= 0)
 	{
-		if (s1[i] != s2[i])
-		{
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-		}
-		i++;
+		if (sp[s_len] == (unsigned char)c)
+			return (sp + s_len);
+		s_len--;
 	}
-	if (i < n)
-	{
-		return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-	}
+	return (NULL);
+}
+/*
+int	main(void) {
+	const char *cadena = "Hello my world";
+	char c = 'o';
+	char *resultado = ft_strrchr(cadena, c);
+	printf("%s", resultado);
 	return (0);
 }
+*/

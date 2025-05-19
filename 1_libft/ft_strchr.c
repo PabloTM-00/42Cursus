@@ -3,30 +3,42 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pabtorre <pabtorre@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ptorr <ptorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/27 18:40:02 by pabtorre          #+#    #+#             */
-/*   Updated: 2025/04/27 18:47:14 by pabtorre         ###   ########.fr       */
+/*   Created: 2025/05/16 10:28:24 by ptorr             #+#    #+#             */
+/*   Updated: 2025/05/18 13:18:47 by ptorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_strchr(const void *str, int c, size_t len)
+char	*ft_strchr(const char *s, int c)
 {
-	unsigned char *s1;
-	size_t i;
+	int	i;
 
 	i = 0;
-	s1 = (unsigned char *)str;
-
-	while (i < len)
+	while (s[i] != '\0')
 	{
-		if (s1[i] == (unsigned char)c)
+		if (s[i] == (unsigned char)c)
 		{
-			return (s1 + i);
+			return ((char *)(s + i));
 		}
 		i++;
 	}
+	if ((unsigned char)c == '\0')
+	{
+		return ((char *)(s + i));
+	}
 	return (NULL);
 }
+
+/*
+int	main(void) {
+	const char *string = "Hello, World!";
+	char c = ',';
+	char *result = ft_strchr(string, c);
+
+	printf("%s", result);
+	return (0);
+}
+*/

@@ -1,33 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kanye <kanye@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/10 15:37:07 by kanye             #+#    #+#             */
-/*   Updated: 2024/09/27 18:20:36 by kanye            ###   ########.fr       */
+/*   Created: 2024/09/21 16:49:29 by kanye             #+#    #+#             */
+/*   Updated: 2024/09/29 15:31:12 by kanye            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	size_t		i;
+	unsigned int	i;
 
 	i = 0;
-	while (i < n && s1[i] != '\0' && s2[i] != '\0')
+	while (s[i] != '\0')
 	{
-		if (s1[i] != s2[i])
-		{
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-		}
+		(*f)(i, &s[i]);
 		i++;
 	}
-	if (i < n)
+}
+
+/*
+void	to_uppercase(unsigned int index, char *ch)
+{
+	if (*ch >= 'a' && *ch <= 'z')
 	{
-		return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		*ch = *ch - 32;
 	}
+}
+
+int	main(void)
+{
+	char	str[] = "hello, world!";
+
+	printf("Result before: %s\n", str);
+	ft_striteri(str, to_uppercase);
+	printf("Result after: %s\n", str);
 	return (0);
 }
+*/

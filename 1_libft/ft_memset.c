@@ -3,46 +3,52 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pabtorre <pabtorre@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kanye <kanye@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/27 18:28:30 by pabtorre          #+#    #+#             */
-/*   Updated: 2025/05/01 20:04:56 by pabtorre         ###   ########.fr       */
+/*   Created: 2024/09/10 15:36:51 by kanye             #+#    #+#             */
+/*   Updated: 2024/09/29 15:28:30 by kanye            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-#include <stdio.h>
-#include <string.h>
-
-void *ft_memset(void *b, int c, size_t len)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	unsigned char *s1;
-	size_t i;
+	size_t			i;
+	unsigned char	*p;
+	unsigned char	pc;
 
 	i = 0;
-	s1 = (unsigned char *)b;
-	while (len > i)
+	p = (unsigned char *)s;
+	pc = (unsigned char)c;
+	while (i < n)
 	{
-		s1[i] = (unsigned char)c;
+		p[i] = pc;
 		i++;
 	}
-	return (b);
+	return (s);
 }
+/*
+int	main(void) {
+	char buffer[10];
 
-int main()
-{
-	char str[50] = "Hola, mundo!";
+	for (int i = 0; i < 10; i++) {
+		buffer[i] = 'A' + i;
+	}
 
-	printf("Cadena original: %s\n", str);
+	printf("Before ft_memset: ");
+	for (int i = 0; i < 10; i++) {
+		printf("%c ", buffer[i]);
+	}
+	printf("\n");
 
-	ft_memset(str, 'x', 5);
+	ft_memset(buffer, 'c', 5);
 
-	printf("Cadena después de ft_memset: %s\n", str);
+	printf("After ft_memset: ");
+	for (int i = 0; i < 10; i++) {
+		printf("%c ", buffer[i]);
+	}
+	printf("\n");
 
-	char str2[50] = "Hola, mundo!";
-	memset(str2, 'x', 5);
-	printf("Cadena después de memset: %s\n", str2);
-
-	return 0;
-}
+	return (0);
+}*/
