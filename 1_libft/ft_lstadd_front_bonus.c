@@ -6,17 +6,17 @@
 /*   By: ptorr <ptorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 00:22:33 by ptorr             #+#    #+#             */
-/*   Updated: 2025/05/21 00:22:38 by ptorr            ###   ########.fr       */
+/*   Updated: 2025/05/21 20:16:45 by ptorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-    if (lst && new)
-    {
-        new->next = *lst;
-        *lst = new;
-    }
+	if (lst && new)
+	{
+		new->next = *lst;
+		*lst = new;
+	}
 }
