@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   print_pointer.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ptorr <ptorr@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kanye <kanye@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/03 10:23:31 by ptorr             #+#    #+#             */
-/*   Updated: 2025/07/03 10:31:41 by ptorr            ###   ########.fr       */
+/*   Created: 2024/10/29 13:29:50 by kanye             #+#    #+#             */
+/*   Updated: 2024/10/29 15:15:29 by kanye            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_printf(const char *format, ...)
+size_t	print_pointer(void *ptr)
 {
-	int i = 0;
-	int printed = 0;
+	size_t	counter;
 
-	while (format[i])
+	counter = 0;
+	if (!ptr)
+		counter += print_str("(nil)");
+	else
 	{
-		if (format[i] == '%' && format[i + 1])
-		{
-			write(1, "?", 1);
-			printed++;
-			i += 2;
-		}
-		else
-		{
-			write(1, &format[i], 1);
-			printed++;
-			i++;
-		}
+		counter += print_str("0x");
+		counter += print_hex((unsigned long)ptr, 16, 'p');
 	}
-	return printed;
+	return (counter);
 }
